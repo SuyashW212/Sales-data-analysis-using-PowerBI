@@ -23,6 +23,9 @@ Identified as the biggest customer providing high profitability.
 Actionable Recommendations
 
 Improve profitability in Delhi: Adjust pricing, optimize costs, or introduce higher-margin products.
+
 Replicate Mumbai’s strategies: Since Mumbai performs well, similar pricing, promotions, and marketing strategies could be applied to Delhi.
+
 Revise pricing for ElectricalSara: Since they place high-volume orders but have a very low profit margin, consider renegotiating terms or offering bundle discounts.
+
 Strengthen relations with Excel Store: Given their profitability, maintain strong engagement and loyalty programs.
