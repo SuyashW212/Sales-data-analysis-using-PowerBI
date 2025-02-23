@@ -1,6 +1,36 @@
-SELECT market_code,count(product_code) FROM sales.transactions group by market_code order by count(product_code) DESC;
-SELECT * FROM sales.transactions  where currency="USD";
-Select * from sales.date where year=2020
-SELECT * FROM sales.transactions  where order_date IN(Select date from sales.date where year=2020);
-Select * from sales.transactions as A  inner join sales.date as B on A.order_date=B.date where B.year= 2020;
-Select B.year,sum(A.sales_amount) from sales.transactions as A  inner join sales.date as B on A.order_date=B.date group by B.year;
+#Show all customer records
+
+SELECT * FROM customers;
+
+#Show total number of customers
+
+SELECT count(*) FROM customers;
+
+#Show transactions for Chennai market (market code for chennai is Mark001
+
+SELECT * FROM transactions where market_code='Mark001';
+
+#Show distrinct product codes that were sold in chennai
+
+SELECT distinct product_code FROM transactions where market_code='Mark001';
+
+#how transactions where currency is US dollars
+
+SELECT * from transactions where currency="USD"
+
+#Show transactions in 2020 join by date table
+
+SELECT transactions.*, date.* FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020;
+
+#Show total revenue in year 2020,
+
+SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.currency="INR\r" or transactions.currency="USD\r";
+	
+#Show total revenue in year 2020, January Month,
+
+SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and and date.month_name="January" and (transactions.currency="INR\r" or transactions.currency="USD\r");
+
+#Show total revenue in year 2020 in Chennai
+
+SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
+and transactions.market_code="Mark001";
